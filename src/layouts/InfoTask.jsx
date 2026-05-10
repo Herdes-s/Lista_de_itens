@@ -12,6 +12,7 @@ function InfoTask() {
     time: "",
     title: "",
     description: "",
+    id: null,
   });
 
   function handleChange(e) {
@@ -21,18 +22,21 @@ function InfoTask() {
     });
   }
 
-  function handleSubmit() {
-    addTask(form);
+  function handleSubmit(e) {
+    e.preventDefault();
+    const taskWithId = { ...form, id: Date.now() };
+    addTask(taskWithId);
     navigate("/");
   }
 
   return (
-    <div className="px-6">
+    <form type="submit" onSubmit={handleSubmit} className="px-6">
       <div className="mb-4">
         <h2 className="text-2xl font-bold text-[#1E293B] mb-3">Data</h2>
         <input
           type="date"
           name="date"
+          required
           className="w-full p-4 bg-[#D9D9D9] rounded-xl border-[1px] border-[#1E293B]"
           onChange={handleChange}
         />
@@ -42,6 +46,7 @@ function InfoTask() {
         <input
           type="time"
           name="time"
+          required
           className="w-full p-4 bg-[#D9D9D9] rounded-xl border-[1px] border-[#1E293B]"
           onChange={handleChange}
         />
@@ -49,8 +54,9 @@ function InfoTask() {
       <div className="mb-4">
         <h2 className="text-2xl font-bold text-[#1E293B] mb-3">Titulo</h2>
         <input
-        name="title"
+          name="title"
           type="text"
+          required
           className="w-full p-4 bg-[#D9D9D9] rounded-xl border-[1px] border-[#1E293B]"
           onChange={handleChange}
         />
@@ -60,15 +66,13 @@ function InfoTask() {
         <input
           type="text"
           name="description"
+          required
           className="w-full p-4 bg-[#D9D9D9] rounded-xl border-[1px] border-[#1E293B]"
           onChange={handleChange}
         />
       </div>
-      <Button
-        textBtn="Criar Tarefa"
-        submit={handleSubmit}
-      />
-    </div>
+      <Button textBtn="Criar Tarefa" type="submit" />
+    </form>
   );
 }
 
