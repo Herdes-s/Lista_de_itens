@@ -1,16 +1,64 @@
-# React + Vite
+# Todo List - React & TailwindCSS
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Uma aplicação de lista de tarefas robusta, desenvolvida com foco em **arquitetura de componentes**, **limpeza de código** e **experiência mobile-first**. Este projeto vai além do básico, explorando hooks avançados e roteamento dinâmico para criar uma ferramenta de produtividade fluida.
 
-Currently, two official plugins are available:
+![site-image](./src/assets/images/lista.png)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Tecnologias Utilizadas
 
-## React Compiler
+* **React.js** (Hooks, Props, Context API)
+* **TailwindCSS** (Estilização responsiva e utilitária)
+* **React Router Dom** (Navegação entre páginas)
+* **Local Storage** (Persistência de dados no navegador)
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Arquitetura e Lógica
 
-## Expanding the ESLint configuration
+O projeto foi estruturado para manter lógicas curtas e responsabilidades bem definidas, utilizando o que há de melhor no ecossistema React:
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+* **Componentização:** Divisão da interface em pequenas unidades reutilizáveis para facilitar a manutenção.
+* **Context API (`useContext`):** Gerenciamento de estado global para acesso simplificado aos dados em diferentes níveis da árvore de componentes.
+* **Hooks Nativos:** Uso estratégico de `useState` para estado local, `useEffect` para persistência e `useNavigate`/`useLocation` para controle de fluxo.
+* **Validação de Formulários:** Sistema de inputs obrigatórios para garantir a integridade dos dados (Data, Hora, Texto e Descrição).
+
+## Funcionalidades
+
+A aplicação está dividida em 3 fluxos principais, todos otimizados especificamente para dispositivos móveis:
+
+1.  **Home:**
+    * Listagem dinâmica de tarefas recuperadas do LocalStorage.
+    * Ações de gerenciamento: Excluir, Editar e Adicionar.
+2.  **Página de Criação:**
+    * Interface dedicada com inputs para Título, Descrição, Data e Hora.
+    * Validação nativa para impedir o envio de campos vazios.
+3.  **Página de Edição:**
+    * Carregamento automático dos dados da tarefa selecionada na célula correspondente.
+    * Edição em tempo real e atualização do estado global.
+
+## Persistência
+
+Os dados são armazenados localmente através da **Web Storage API (localStorage)**, garantindo que as notas persistam mesmo após o fechamento ou recarregamento do navegador.
+
+---
+
+## Como rodar o projeto
+
+```bash
+# Clone o repositório
+git clone [URL_DO_SEU_REPOSITORIO]
+
+# Entre na pasta do projeto
+cd [NOME_DA_PASTA]
+
+# Instale as dependências
+npm install
+
+# Inicie o servidor de desenvolvimento
+npm run dev
+
+```
+
+---
+
+## Autor
+
+Desenvolvido por Ernand Soares
