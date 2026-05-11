@@ -44,7 +44,7 @@ Os dados são armazenados localmente através da **Web Storage API (localStorage
 
 ```bash
 # Clone o repositório
-git clone [URL_DO_SEU_REPOSITORIO]
+git clone https://github.com/Herdes-s/Lista_de_itens.git
 
 # Entre na pasta do projeto
 cd [NOME_DA_PASTA]
