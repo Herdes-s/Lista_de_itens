@@ -44,10 +44,10 @@ Os dados são armazenados localmente através da **Web Storage API (localStorage
 
 ```bash
 # Clone o repositório
-git clone https://github.com/Herdes-s/Lista_de_itens.git
+git clone "https://github.com/Herdes-s/Lista_de_itens"
 
 # Entre na pasta do projeto
-cd [NOME_DA_PASTA]
+cd Lista_de_itens
 
 # Instale as dependências
 npm install
